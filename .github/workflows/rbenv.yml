@@ -15,4 +15,4 @@ jobs:
         echo "2.6.5" > .ruby-version
 
     - name: Set up the latest Ruby 2.6
-      uses: masa-iwasaki/setup-rbenv@master
+      uses: masa-iwasaki/setup-rbenv@2ab0225
