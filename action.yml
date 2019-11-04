@@ -1,10 +1,10 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Masatoshi Iwasaki'
+description: 'Set up GitHub Actions workflow with rbenv'
+author: 'Masatoshi Iwasaki'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  # myInput:              # change this
+  #   description: 'input description here'
+  #   default: 'default value if applicable'
 runs:
   using: 'node12'
   main: 'lib/main.js'
