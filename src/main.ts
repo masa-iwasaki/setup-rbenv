@@ -3,9 +3,16 @@ import * as installer from './installer';
 
 async function run() {
   try {
-    await installer.install_rbenv();
+    let options: installer.RbenvOptions = {
+      rbenv_root: "/home/runner",
+      rbenv_root_owner: "runner"
+    }
 
-    await installer.install_ruby_build();
+    options.rbenv_root = core.getInput('rbenv_root');
+    options.rbenv_root_owner = core.getInput('rbenv_root_owner');
+
+    await installer.install_rbenv(options);
+    await installer.install_ruby_build(options);
   } catch (error) {
     core.setFailed(error.message);
   }
