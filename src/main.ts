@@ -8,8 +8,16 @@ async function run() {
       rbenv_root_owner: "runner"
     }
 
-    options.rbenv_root = core.getInput('rbenv_root');
-    options.rbenv_root_owner = core.getInput('rbenv_root_owner');
+    let rbenv_root = core.getInput('rbenv_root');
+    let rbenv_root_owner = core.getInput('rbenv_root_owner');
+
+    if (!!rbenv_root) {
+      options.rbenv_root = rbenv_root;
+    }
+
+    if (!!rbenv_root_owner) {
+      options.rbenv_root_owner = rbenv_root_owner;
+    }
 
     await installer.install_rbenv(options);
     await installer.install_ruby_build(options);
