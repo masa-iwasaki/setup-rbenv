@@ -20,5 +20,7 @@ export async function install_ruby_build() {
 
   await exec.exec('sudo', ['apt-get', 'update']);
   await exec.exec('sudo', ['apt-get', 'install', '-y', ...packages]);
+
+  await exec.exec('git', ['clone', 'https://github.com/rbenv/rbenv.git', '~/.rbenv/plugins/ruby-build']);
 };
 
