@@ -1,10 +1,11 @@
 import * as core from '@actions/core';
 import * as installer from './installer';
+import { exec } from 'child_process';
 
 async function run() {
   try {
     let options: installer.RbenvOptions = {
-      rbenvRoot: "/home/runner",
+      rbenvRoot: "/home/runner/.rbenv",
       rbenvRootOwner: "runner"
     }
 
@@ -21,6 +22,9 @@ async function run() {
 
     await installer.intallRbenv(options);
     await installer.installRubyBuild(options);
+
+    core.exportVariable('RBENV_ROOT', options.rbenvRoot);
+    core.addPath(`${options.rbenvRoot}/bin`);
   } catch (error) {
     core.setFailed(error.message);
   }
