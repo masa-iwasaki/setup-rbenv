@@ -1,4 +1,4 @@
-name: 'Masatoshi Iwasaki'
+name: 'setup-rbenv'
 description: 'Set up GitHub Actions workflow with rbenv'
 author: 'Masatoshi Iwasaki'
 
