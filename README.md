@@ -7,7 +7,7 @@ Set up Ruby by [rbenv](https://github.com/rbenv/rbenv), not using tool-cache pro
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: actions/setup-rbenv@v0.1
+- uses: masa-iwasaki/setup-rbenv@v1.0.0-beta
 - run: |
     eval "$(rbenv init -)"
     rbenv install `cat .ruby-version` # or specify the version you want
