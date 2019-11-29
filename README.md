@@ -8,9 +8,15 @@ Set up Ruby by [rbenv](https://github.com/rbenv/rbenv), not using tool-cache pro
 steps:
 - uses: actions/checkout@master
 - uses: masa-iwasaki/setup-rbenv@v1.0.0-beta
-- run: |
+- name: Install Ruby
+  run: |
     eval "$(rbenv init -)"
     rbenv install `cat .ruby-version` # or specify the version you want
+
+- name: Run bundler
+  run: |
+    eval "$(rbenv init -)"
+    bundle install --path vendor/bundle
 ```
 
 # License
