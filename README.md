@@ -41,7 +41,7 @@ steps:
     rbenv install -s `cat .ruby-version`
 ```
 
-You don't need to check cache hit because `-s` option for `rbenv install` does the job.
+You don't need to check cache hit because `-s` option for `rbenv install` does the job. Also you need to be aware of [cache limits](https://github.com/actions/cache#cache-limits).
 
 # License
 
