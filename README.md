@@ -32,7 +32,7 @@ steps:
   uses: actions/cache@preview
   id: cache_rbenv
   with:
-    path: $RBENV_ROOT
+    path: /home/runner/.rbenv
     key: ${{ runner.os }}-rbenv
 
 - name: Install Ruby
