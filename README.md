@@ -28,7 +28,7 @@ By using [actions/cache](https://github.com/actions/cache), you can keep your ru
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: masa-iwasaki/setup-rbenv@preview
+- uses: masa-iwasaki/setup-rbenv@v1
 
 - name: Cache RBENV_ROOT
   uses: actions/cache@preview
