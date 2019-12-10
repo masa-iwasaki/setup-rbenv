@@ -1,9 +1,13 @@
 import * as core from '@actions/core';
 import * as installer from './installer';
-import { exec } from 'child_process';
 
 async function run() {
   try {
+
+    if (process.platform !== 'linux') {
+      core.error(`Not a supported platform. Only Linux is supported.`);
+    }
+
     let options: installer.RbenvOptions = {
       rbenvRoot: "/home/runner/.rbenv",
       rbenvRootOwner: "runner"
