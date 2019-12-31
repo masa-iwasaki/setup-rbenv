@@ -31,7 +31,7 @@ steps:
 - uses: masa-iwasaki/setup-rbenv@v1
 
 - name: Cache RBENV_ROOT
-  uses: actions/cache@preview
+  uses: actions/cache@v1
   id: cache_rbenv
   with:
     path: /home/runner/.rbenv
