@@ -1,0 +1,24 @@
+name: 'Ubuntu 18.04'
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - 'releases/*'
+
+jobs:
+  test:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+
+    - run: npm ci
+    - run: npm run build
+    - run: npm test
+    - uses: ./
+    - run: |
+        eval "$(rbenv init -)"
+        rbenv install 2.5.7
+        rbenv install 2.6.5
+        rbenv install 2.7.0

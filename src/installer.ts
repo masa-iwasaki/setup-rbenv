@@ -1,4 +1,5 @@
 import * as exec from '@actions/exec';
+import * as fs from 'fs'
 
 export async function intallRbenv(options: RbenvOptions) {
   await exec.exec('sudo', ['git', 'clone', 'https://github.com/rbenv/rbenv.git', options.rbenvRoot]);
@@ -16,9 +17,20 @@ export async function installRubyBuild(options: RbenvOptions) {
     "zlib1g-dev",
     "libncurses5-dev",
     "libffi-dev",
-    "libgdbm5",
     "libgdbm-dev"
   ];
+
+  const osRelease = fs.readFileSync("/etc/os-release", {encoding: "utf-8"});
+  const matched = osRelease.match(/VERSION_ID="([0-9.]+)"/);
+  const ubuntuVersion = matched ? matched[1] : "0";
+
+  if (parseFloat(ubuntuVersion) >= 18.04 ){
+    // Ubuntu 18.04+ (bionic)
+    packages.push("libgdbm5");
+  } else {
+    // Ubuntu 16.04 (xenial)
+    packages.push("libgdbm3");
+  }
 
   const rubyBuildInstallPath = `${options.rbenvRoot}/plugins/ruby-build`;
 
