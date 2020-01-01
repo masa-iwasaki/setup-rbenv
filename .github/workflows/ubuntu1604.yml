@@ -1,4 +1,4 @@
-name: 'Linux'
+name: 'Ubuntu 16.04'
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@master
 
@@ -20,4 +20,6 @@ jobs:
     - run: |
         eval "$(rbenv init -)"
         rbenv install 2.5.7
+        rbenv install 2.6.5
+        rbenv install 2.7.0
     
