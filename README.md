@@ -1,6 +1,6 @@
 # setup-rbenv
 
-Setup Ruby by [rbenv](https://github.com/rbenv/rbenv) on Linux, not using tool-cache provided by GitHub to catch up the latest versions of Ruby.
+Setup Ruby by [rbenv](https://github.com/rbenv/rbenv) on Ubuntu 18.04 / 16.04 virtual environments, not using tool-cache provided by GitHub to catch up the latest versions of Ruby.
 
 # Usage
 
