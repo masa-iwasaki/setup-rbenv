@@ -2,7 +2,7 @@ import * as exec from '@actions/exec';
 import * as fs from 'fs'
 
 export async function intallRbenv(options: RbenvOptions) {
-  await exec.exec('sudo', ['git', 'clone', 'https://github.com/rbenv/rbenv.git', options.rbenvRoot]);
+  await exec.exec('sudo', ['git', 'clone', '--depth', '1', 'https://github.com/rbenv/rbenv.git', options.rbenvRoot]);
 }
 
 export interface RbenvOptions {
@@ -37,7 +37,7 @@ export async function installRubyBuild(options: RbenvOptions) {
   await exec.exec('sudo', ['apt-get', 'update']);
   await exec.exec('sudo', ['apt-get', 'install', '-y', ...packages]);
 
-  await exec.exec('sudo', ['git', 'clone', 'https://github.com/rbenv/ruby-build.git', rubyBuildInstallPath]);
+  await exec.exec('sudo', ['git', 'clone', '--depth', '1', 'https://github.com/rbenv/ruby-build.git', rubyBuildInstallPath]);
 
   await exec.exec('sudo', ['chown', '-R', options.rbenvRootOwner, options.rbenvRoot])
 };
