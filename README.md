@@ -35,7 +35,9 @@ steps:
   id: cache_rbenv
   with:
     path: /home/runner/.rbenv
-    key: ${{ runner.os }}-rbenv
+    key: ${{ runner.os }}-rbenv-${{ hashFiles('**/.ruby-version') }}
+    restore-keys: |
+      {{ runner.os }}-rbenv-
 
 - name: Install Ruby
   run: |
