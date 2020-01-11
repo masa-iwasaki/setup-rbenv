@@ -1,3 +1,7 @@
+*** IMPORTANT NOTICES ***
+
+If you are looking for an alternative of [actoins/setup-ruby](https://github.com/actions/setup-ruby) and you have no special reason for building Ruby by yourself, I recommend you to try [eregon/use-ruby-action](https://github.com/eregon/use-ruby-action).  This action, which has been developed by a Ruby committer, does installing pre-compiled Rubies built at [eregon/ruby-install-builder](https://github.com/eregon/ruby-install-builder). It is much faster than this action and I believe it is what most Ruby developers want to have.
+
 # setup-rbenv
 
 Setup Ruby by [rbenv](https://github.com/rbenv/rbenv) on Ubuntu 18.04 / 16.04 virtual environments, not using tool-cache provided by GitHub to catch up the latest versions of Ruby.
